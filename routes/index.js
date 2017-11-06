@@ -115,7 +115,7 @@ router.get('/bank', function(req, res, next) {
 });
 
 router.get('/hospitals',function(req,res,next){
-    hospitals.find({}).exec(function(err,doc){
+    hospitals.find({}).sort({rating : -1}).exec(function(err,doc){
         if(err)
             throw err;
         res.render('index', {
@@ -132,7 +132,7 @@ router.get('/hospitals',function(req,res,next){
 })
 
 router.get('/hotels',function(req,res,next){
-    hotels.find({}).exec(function(err,doc){
+    hotels.find({}).sort({rating : -1}).exec(function(err,doc){
         if(err)
             throw err;
         res.render('index', {
@@ -149,7 +149,7 @@ router.get('/hotels',function(req,res,next){
 })
 
 router.get('/report',function(req,res,next){
-    comments.find({}).exec(function(err,doc){
+    comments.find({}).sort({date : -1}).exec(function(err,doc){
         if(err)
             throw err;
         res.render('index', {
@@ -222,17 +222,14 @@ router.post('/addb',function(req,res,next){
 })
 router.post('/addc',function(req,res,next){
     var data = new comments({
-        commentOn: req.body.commentOn,
         commentDetail: req.body.commentDetail,
-        commentedBy : req.body.commentedBy
+        commentedBy: req.body.commentedBy
     });
     data.save(function (err, success) {
         if (err) {
             throw err;
         }
-        else {
-            res.render('add');
-        }
+        res.redirect('/report');
     });
 })
 
@@ -331,4 +328,6 @@ router.post('/addt',function(req,res,next){
         }
     });
 })
+
+
 module.exports = router;

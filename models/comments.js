@@ -5,10 +5,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
-    commentOn : {
-        type: String,
-        required : true
-    },
     commentDetail: {
         type : String,
         required: true

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vellore | <%title%></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Khand:300,400,700" rel="stylesheet">
   <!-- Bulma Version 0.6.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Scope+One|Acme" rel="stylesheet">
@@ -127,18 +127,44 @@
 
 <%if(comments){%>
 <div style="padding : 3%;">
-  <div class="card-columns">
-      <%for(var i=0;i<comments.length;i++){%>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="/comments/<%=comments[i]._id%>" class="btn btn-primary">Go somewhere</a>
+      <div class="container">
+          <div class="row">
+              <div class="message-container col-lg-12" style=" background-color: #ffffff; border: 0px solid black; border-radius: 5px; opacity: 1; padding : 5% 0 0 0;">
+                  <h1 style="font-family: 'Khand', sans-serif;">What do you think about Vellore</h1><hr>
+                  <article class="media">
+                      <figure class="media-left">
+                          <p class="image is-64x64">
+                              <img src="http://clipartix.com/wp-content/uploads/2016/05/Thinking-clip-art-2.jpg">
+                          </p>
+                      </figure>
+                      <form class="media-content" action="/addc" method="post">
+                          <div class="field">
+                              <p class="control">
+                                  <textarea class="textarea" name="commentDetail" placeholder="Add a comment..."></textarea>
+                                  <input type="text" name="commentedBy" class="input" placeholder="Share your name(You will vistor by default)">
+                              </p>
+                          </div>
+                          <div class="field">
+                              <p class="control">
+                                  <button type="submit" class="button is-primary is-outlined">Post comment</button>
+                              </p>
+                          </div>
+                      </form>
+                  </article>
+              </div>
+          </div>
       </div>
+    <div class="columns">
+        <%for(var i=0;i<comments.length;i++){%>
+        <div class="card is-primary" style="width: 20rem;">
+            <div class="card-block">
+                <h4 class="card-title"><%=comments[i].commentedBy%></h4>
+                <p class="card-text"><%=comments[i].commentDetail%></p>
+            </div>
+        </div>
+        <%}}%>
     </div>
   </div>
-      <%}}%>
   </div>
 
 
@@ -223,7 +249,7 @@
         <%for(var i=0;i<travel.length;i++){%>
         <tr>
             <th scope="row"><%=travel[i].rno%></th>
-            <td><%=travel[i].from%></td>
+            <td>Vellore</td>
             <td><%=travel[i].to%></td>
             <th>
                 <a href="/travel/<%=travel[i]._id%>">
