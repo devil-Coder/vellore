@@ -4,9 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var bank = require('./routes/bank');
 
 var app = express();
 
@@ -24,7 +26,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/bank', bank);
 
+//CREATING A DATA BASE OBJECT
+var db = mongoose.connection;
+//CONNECTING TO MONGODB ON START
+mongoose.connect("mongodb://raj:raj@ds243085.mlab.com:43085/vellore", function(err) {
+    //mongodb://raj:raj@ds125183.mlab.com:25183/vellore
+    //mongodb://localhost:27017/vellore
+    if (err) {
+        console.log(err);
+        process.exit(1);
+    } else {
+        console.log('MongoDB Listening at port 3000...');
+    }
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

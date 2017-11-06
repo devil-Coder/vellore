@@ -16,19 +16,6 @@ var hotelSchema = new Schema({
         type : String,
         required: true
     }],
-    region : {
-        type: String,
-        required : true,
-        default : "Indian"
-    },
-    specails : [{
-        item : {type: String}
-    }],
-    category: {
-        type : String,
-        required : true,
-        default : "non - vegetarian"
-    },
     latitude: {
         type : String,
         required: true
@@ -42,7 +29,7 @@ var hotelSchema = new Schema({
     },
     comments : [{
         commentDetail: {type: String},
-        commentedBy: {type: String},
+        commentedBy: {type: String,default : "Visitor"},
         support: {type: Number},
         disapprove : [{
             count :{type:Number},

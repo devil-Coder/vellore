@@ -13,7 +13,7 @@ var placeSchema = new Schema({
         type : String,
         required: true
     }],
-    knownFor : {
+    detail : {
         type: String
     },
     latitude: {
@@ -29,7 +29,7 @@ var placeSchema = new Schema({
     },
     comments : [{
         commentDetail: {type: String},
-        commentedBy: {type: String},
+        commentedBy: {type: String,default : "Visitor"},
         support: {type: Number},
         disapprove : [{
             count :{type:Number},

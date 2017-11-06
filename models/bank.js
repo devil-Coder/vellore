@@ -18,7 +18,7 @@ var bankSchema = new Schema({
     },
     atm: {
         type : String,
-        required: true
+        default : "YES"
     },
     longitude: {
         type : String,
@@ -32,6 +32,15 @@ var bankSchema = new Schema({
         type:Date,
         default: Date.now
     },
+    comments : [{
+        commentDetail: {type: String},
+        commentedBy: {type: String,default : "Visitor"},
+        support: {type: Number,default : 0},
+        disapprove : [{
+            count :{type:Number, default : 0},
+            reason : {type:String}
+        }]
+    }],
     rating : {
         type : Number
     }

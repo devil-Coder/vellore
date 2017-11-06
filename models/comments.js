@@ -15,19 +15,22 @@ var commentSchema = new Schema({
     },
     commentedBy: {
         type : String,
-        required: true
+        required: true,
+        default : "Visitor"
     },
     support: {
-        type: Number
+        type: Number,
+        default : 0
     },
     disapprove : [{
         count :{
-            type:Number
+            type:Number,
+            default : 0
         },
         reason : {
             type:String
         }
-    }]
+    }],
     date:{
         type:Date,
         default: Date.now

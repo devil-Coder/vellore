@@ -16,9 +16,9 @@ var hospitalSchema = new Schema({
         type : String,
         required: true
     }],
-    category: {
-        type : String,
-        required : true
+    category : {
+        type:String,
+        default : "General Hospital"
     },
     latitude: {
         type : String,
@@ -33,7 +33,7 @@ var hospitalSchema = new Schema({
     },
     comments : [{
         commentDetail: {type: String},
-        commentedBy: {type: String},
+        commentedBy: {type: String,default : "Visitor"},
         support: {type: Number},
         disapprove : [{
             count :{type:Number},
