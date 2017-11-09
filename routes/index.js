@@ -85,8 +85,8 @@ router.get('/:name/:_id',function(req,res,next){
             travel.find({'_id' : detailId}).exec(function(error,oneItem){
                 if(error)
                     throw error;
-                res.render('detailed',{
-                    title: 'Bank' ,
+                res.render('travel',{
+                    title: 'travel' ,
                     detail : oneItem[0]
                 });
             });

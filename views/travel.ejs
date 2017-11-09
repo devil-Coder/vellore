@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head ng-app="vellore" ng-controller="contentDelivery">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vellore | {{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Khand:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Scope+One|Acme" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!--Angular Goes Here-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="/javascripts/controllers/app.js"></script>
+    <!--<script src="/javascripts/controllers/index.js"></script>-->
+    <style>
+        a:hover{
+            text-decoration : none;
+        }
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px; /* 5px rounded corners */
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+        /* Add rounded corners to the top left and the top right corner of the image */
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+<section class="hero is-primary">
+    <div class="hero-body" style="display: flex;">
+        <div class="container">
+            <h1 class="title">
+                <font>
+                    <b>
+                        Vellore India
+                    </b>
+                </font>
+            </h1>
+            <h2 class="subtitle">
+                <font><b>a place to adore</b></font>
+            </h2>
+        </div>
+        <!--<div class="float-right"><svg width="50%" height="100%" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 841.89 841.89"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;}.cls-2{fill:#3498db;}.cls-3{font-size:64.12px;fill:#fff;font-family:Raleway-Bold, Raleway;font-weight:700;}.cls-4{letter-spacing:-0.04em;}</style></defs><title>Artboard 1</title><line class="cls-1" x1="410.16" y1="522.29" x2="410.16" y2="482.9"/><line class="cls-1" x1="455.16" y1="522.29" x2="455.16" y2="482.9"/><path class="cls-2" d="M406.42,38.19,419.7,0,535.94,3.32l47.33,48.16,16.61,67.25,7.47,54,96.31,34,29.06,47.33-44.83,49.82-11.62,10s-12.45,15.78-39-28.23l-10.79-.83L575.79,307.2l-6.23,5-5.4,4.41-10,6.38-4.15,6.64-3.32,11.62-.83,19.1L575,452.5l1.66,11.62-7.06,16.61L556.69,587l-5.81,4.15H540.09l-6.64,14.11,3.32,10.79h12.45l20.34,3.32,33.63,66.42L553.37,805.36l-97.14,36.53-21.59-80.54h5.81l4.15-6.64,5-.83v-9.13H438l-5-5-7.47-9.13-15.78-69.74-83.86-58.12-30.72-16.61-32.38-31.55L244.51,469.1l-71.4-31.55-57.29-46.49-6.64-45.66,53.14-25.74,75.55-14.11,45.66-5,45.66-9.13,22.42-60.61,19.93-19.1,5-32.38,10,6.64,38.19.83L403.92,137l-25.74-.83L384,99.63l11.62-34,6.64,5,24.91-1.66,3.32-13.28-9.55-5Z"/><text class="cls-3" transform="translate(175.75 394.92)">VEL<tspan class="cls-4" x="119.33" y="0">L</tspan><tspan x="153.89" y="0">ORE</tspan></text><text class="cls-3" transform="translate(328.84 464.92)">GUIDE</text><image width="256" height="256" transform="translate(370.6 487.6) scale(0.12)" xlink:href="double-king-size-bed.png"/><image width="128" height="128" transform="matrix(0.16, -0.16, 0.16, 0.16, 414.27, 502.6)" xlink:href="black-plane.png"/><image width="128" height="128" transform="translate(464.73 487.6) scale(0.23 0.23)" xlink:href="placeholder.png"/><rect class="cls-1" x="360.48" y="482.9" width="143.75" height="39.39"/></svg></div>-->
+    </div>
+</section>
+<%if(detail){%>
+<div style="padding : 3%;">
+    <div class="container">
+        <div class="row">
+            <div class="img-container col-lg-6">
+                <article class="message is-info">
+                    <div class="message-header">
+                        <p><%= detail.to%> from <%=detail.from%></p>
+                    </div>
+                    <div class="message-body"><%= detail.timing%></div>
+                </article>
+            </div>
+            <div class="col-lg-3">
+                <!--fare Container-->
+                <div class="img-container col-lg-12">
+                    <article class="message is-warning">
+                        <div class="message-header">
+                            <p>Bus Fare</p>
+                        </div>
+                        <div class="message-body"><%= detail.fare%></div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <!--fare Container-->
+                <div class="img-container col-lg-12">
+                    <article class="message is-success">
+                        <div class="message-header">
+                            <p>Route</p>
+                        </div>
+                        <div class="message-body"><%=detail.from%> to <%= detail.to%> <%if(detail.via){%>via <%=detail.via%><%}%></div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="message-container col-lg-12" style=" background-color: #ffffff; border: 0px solid black; border-radius: 5px; opacity: 1; padding : 5% 0 0 0;">
+            <h1 style="font-family: 'Khand', sans-serif;">What people say about <%=detail.name%></h1><hr>
+            <%if(detail.comments){for(var i=0;i<detail.comments.length;i++){%>
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="https://www.caclubindia.com/img/preview/paidnfree/Discussion.jpg">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong><%=detail.comments[i].commentedBy%></strong>
+                            <br>
+                            <%=detail.comments[i].commentDetail%>
+                            <br>
+                            <small><a><%=detail.comments[i].support%> Agree</a></small>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <%}}%>
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="http://clipartix.com/wp-content/uploads/2016/05/Thinking-clip-art-2.jpg">
+                    </p>
+                </figure>
+                <form class="media-content" action="/bank/comments/<%=detail._id%>" method="post">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" name="commentDetail" placeholder="Add a comment..."></textarea>
+                            <input type="text" name="commentedBy" class="input" placeholder="Share your name(You will vistor by default)">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button type="submit" class="button is-primary is-outlined">Post comment</button>
+                        </p>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>
+</div>
+<div align="center" style="padding:1%; text-decoration: none;"><a href="/"><button class="button is-info is-outlined"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp; Return</button></a></div>
+
+<%}%>
+</body>
+</html>
