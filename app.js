@@ -31,7 +31,7 @@ app.use('/bank', bank);
 //CREATING A DATA BASE OBJECT
 var db = mongoose.connection;
 //CONNECTING TO MONGODB ON START
-mongoose.connect("mongodb://raj:raj@ds243085.mlab.com:43085/vellore", function(err) {
+mongoose.connect("", function(err) {
     //mongodb://raj:raj@ds125183.mlab.com:25183/vellore
     //mongodb://localhost:27017/vellore
     if (err) {
